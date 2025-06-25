@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +29,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <header className="page-container">
+          <Link className="inline-block" href="/" aria-label="Tiergarten Home">
+            <Image
+              src="/logo.svg"
+              alt="Tiergarten Logo"
+              width={102}
+              height={131}
+            />
+          </Link>
+        </header>
         {children}
       </body>
     </html>
