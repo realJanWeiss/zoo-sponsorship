@@ -15,7 +15,7 @@ export default async function AnimalPage({
   const formattedDescription = animal.description.replaceAll("\n", "<br>");
 
   return (
-    <div className="page-container pt-8">
+    <div className="page-container pt-8 pb-24">
       <h1>{animal.name}</h1>
       <div className="italic mb-4">{animal.latinName}</div>
       <div className="flex flex-wrap gap-8 mb-8">
@@ -45,11 +45,13 @@ export default async function AnimalPage({
           />
         </ul>
       </div>
+      <h2>Beschreibung</h2>
       <p
         className="max-w-[80ch]"
         dangerouslySetInnerHTML={{ __html: formattedDescription }}
       />
 
+      <h2>Tiere in unserem Zoo</h2>
       {animal.animals.map((animal) => (
         <li key={animal.id}>
           <p>{animal.name}</p>

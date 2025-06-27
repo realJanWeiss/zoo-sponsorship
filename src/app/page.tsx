@@ -7,7 +7,7 @@ export default async function Home() {
   const animals: Animal[] = await fetchAnimals();
 
   return (
-    <div className="pt-8">
+    <div className="pt-8  pb-24">
       <h1 className="page-container">Tier-Patenschaft</h1>
       <ul className="page-container grid gap-4 grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))]">
         {animals.map((animal) => (
