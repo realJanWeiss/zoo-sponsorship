@@ -8,9 +8,10 @@
         "lifeExpectancy": 50,
         "gestationPeriod": 660,
         "image": {
-            "src": "/animal-images/detail/afrikanischer-elefant.jpg",
-            "width": 801,
-            "height": 450
+            "src": "/animal-images/afrikanischer-elefant.jpg",
+            "width": 960,
+            "height": 640,
+            "originalSrc": "https://commons.wikimedia.org/wiki/File:An_elephant_in_Kruger_National_Park.jpg"
         },
         "description": "Der Afrikanische Elefant ist das schwerste lebende Landsäugetier. Sowohl die Männchen als auch die Weibchen besitzen Stoßzähne. Weitere Kennzeichen der Afrikanischen Elefanten sind die riesigen Ohren, die für die Wärmeregulierung bedeutsam sind, sowie die zwei Greiffinger an der Rüsselspitze. Herden bestehen aus erwachsenen Weibchen und Jungtieren. Sie werden von erfahrenen, älteren Elefantenkühen angeführt. Bullen leben hingegen in Kleingruppen oder als Einzelgänger.\n\nAufgrund von Wilderei und Lebensraumverlust hat der Bestand der Afrikanischen Elefanten in den letzten Jahrzehnten massiv abgenommen. Auf der Roten Liste stehen sie als \"stark gefährdet\".\n\nDerzeit leben bei uns im Tiergarten Schönbrunn die Tiere \"Tonga\", \"Numbi\", \"Mongu\", \"Iqhwa\" und \"Abu\".",
         "animals": [
@@ -48,9 +49,10 @@
         "lifeExpectancy": 12,
         "gestationPeriod": 30,
         "image": {
-            "src": "/animal-images/detail/bennettkaenguru.jpg",
-            "width": 800,
-            "height": 534
+            "src": "/animal-images/bennettkaenguru.jpg",
+            "width": 960,
+            "height": 640,
+            "originalSrc": "https://commons.wikimedia.org/wiki/File:Macropus_rufogriseus_with_joey_in_pouch_grazing.jpg"
         },
         "description": "Bennettkängurus bewohnen Wald und Strauchgebiete. Sie sind überwiegend dämmerungs- und nachtaktiv. Mit einer Kopf-Rumpf-Länge von bis zu 105 cm und einer Schwanzlänge von ca. 75 cm sind sie eine mittelgroße Art aus der Gruppe der Wallabies.\n\nIhre Jungtiere, die nach der kurzen Tragzeit noch sehr unterentwickelt geboren werden, wandern entlang einer feuchten Schleimspur in den Beutel der Mutter. Diesen verlassen sie erst nach einem halben Jahr und werden im Alter von 12 bis 17 Monaten entwöhnt.",
         "animals": [
@@ -77,9 +79,10 @@
         "lifeExpectancy": 55,
         "gestationPeriod": 240,
         "image": {
-            "src": "/animal-images/detail/flusspferd.jpg",
-            "width": 801,
-            "height": 534
+            "src": "/animal-images/flusspferd.jpg",
+            "width": 960,
+            "height": 585,
+            "originalSrc": "https://commons.wikimedia.org/wiki/File:Hipop%C3%B3tamo_(Hippopotamus_amphibius),_parque_nacional_de_Chobe,_Botsuana,_2018-07-28,_DD_82.jpg"
         },
         "description": "Flusspferde verbringen viele Stunden zur Abkühlung und Ruhe in stehenden oder langsam fließenden Gewässern Afrikas. Sie sind in der Lage, Nase und Ohren zu verschließen, sodass beim Untertauchen kein Wasser eindringen kann. Flusspferde tauchen im Durchschnitt etwa fünf Minuten lang.\n\nDie Geburt der Flusspferde erfolgt im Wasser. Gleich danach nimmt die Mutter ihr Junges auf die breite Schnauze und hievt es an die Wasseroberfläche, damit es atmen kann. Das Neugeborene wiegt fast 50 kg und wird auch unter Wasser gesäugt. In Wien war erstmals am 5. Mai 1909 ein Flusspferd zu sehen.",
         "animals": [
@@ -102,9 +105,10 @@
         "gestationPeriod": 270,
         "lifeExpectancy": 25,
         "image": {
-            "src": "/animal-images/detail/eisbaer.jpg",
-            "width": 712,
-            "height": 534
+            "src": "/animal-images/eisbaer.jpg",
+            "width": 960,
+            "height": 640,
+            "originalSrc": "https://commons.wikimedia.org/wiki/File:Ursus_maritimus_in_Tiergarten_Sch%C3%B6nbrunn_24_July_2020_JM_(2).jpg"
         },
         "description": "Eisbären sind - nach den Kodiak- und den Kamtschatkabären - die drittgrößten Landbeutegreifer: Sie schwimmen und tauchen geschickt und ausdauernd. Ihr dichtes und wasserabweisendes Haarkleid und eine dicke Fettschicht unter der Haut bieten einen ausgezeichneten Kälteschutz.\n\nDer Lebensraum der Eisbären erstreckt sich von den Packeisfeldern bis zu den blühenden Tundra- und Taiga-Landschaften. Klimaveränderung, Reduktion der Lebensräume sowie unkontrollierbare Bejagung und Meeresverschmutzung gefährden ihren Fortbestand.",
         "animals": [

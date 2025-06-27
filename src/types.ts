@@ -12,6 +12,7 @@ interface ImageAsset {
   src: string;
   width: number;
   height: number;
+  originalSrc?: string;
 }
 
 export interface Animal {

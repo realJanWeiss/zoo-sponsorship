@@ -44,6 +44,7 @@ export default function RootLayout({
                 width={102}
                 height={131}
               />
+              <div className="text-sm text-gray-900 -mt-2">Happy Paws Zoo</div>
             </Link>
             <WalletConnect />
           </header>

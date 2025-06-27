@@ -19,12 +19,23 @@ export default function ClientAnimalPage({ animal }: { animal: Animal }) {
       <h1>{animal.name}</h1>
       <div className="italic mb-4">{animal.latinName}</div>
       <div className="flex flex-wrap gap-8 mb-8">
-        <Image
-          src={animal.image.src}
-          width={animal.image.width}
-          height={animal.image.height}
-          alt={animal.name}
-        />
+        <div>
+          <Image
+            className="w-[650px] max-w-full"
+            src={animal.image.src}
+            width={animal.image.width}
+            height={animal.image.height}
+            alt={animal.name}
+          />
+          <div className="text-sm text-gray-700 mt-2">
+            via <a href={animal.image.originalSrc}>Wikimedia Commons</a>,
+            licensed under{" "}
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">
+              CC BY-SA 4.0
+            </a>
+            .
+          </div>
+        </div>
         <ul className="flex flex-col gap-2">
           <InformationRow label="Familie" value={animal.family} />
           <InformationRow

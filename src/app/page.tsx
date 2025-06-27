@@ -14,9 +14,10 @@ export default async function Home() {
           <li key={animal.slug}>
             <Link className="block" href={`/${animal.slug}`}>
               <Image
-                src={`/animal-images/thumbnails/${animal.slug}-thumbnail.jpg`}
-                height={206}
-                width={310}
+                className="object-cover aspect-300/200"
+                src={animal.image.src}
+                height={animal.image.height}
+                width={animal.image.width}
                 alt=""
               />
               {animal.name}
