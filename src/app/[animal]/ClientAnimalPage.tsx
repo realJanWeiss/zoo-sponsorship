@@ -1,0 +1,66 @@
+// app/animal/[animal]/ClientAnimalPage.tsx
+"use client";
+
+import { useState } from "react";
+import TokenAvailability from "../components/TokenAvailabilty";
+import AdoptButton from "../components/AdoptButton";
+import Image from "next/image";
+import InformationRow from "./InformationRow";
+
+export default function ClientAnimalPage({ animal }: { animal: any }) {
+  const formattedDescription = animal.description.replaceAll("\n", "<br>");
+  const [refreshKey, setRefreshKey] = useState(0);
+
+  const triggerRefresh = () => setRefreshKey((prev) => prev + 1);
+
+  return (
+    <div className="page-container pt-8 pb-24">
+      <h1>{animal.name}</h1>
+      <div className="italic mb-4">{animal.latinName}</div>
+      <div className="flex flex-wrap gap-8 mb-8">
+        <Image
+          src={animal.image.src}
+          width={animal.image.width}
+          height={animal.image.height}
+          alt={animal.name}
+        />
+        <ul className="flex flex-col gap-2">
+          <InformationRow label="Familie" value={animal.family} />
+          <InformationRow
+            label="Gewicht"
+            value={
+              typeof animal.weight === "object"
+                ? `${animal.weight.min} - ${animal.weight.max} kg`
+                : `${animal.weight} kg`
+            }
+          />
+          <InformationRow
+            label="Lebensdauer"
+            value={`${animal.lifeExpectancy} Jahre`}
+          />
+          <InformationRow
+            label="Tragzeit"
+            value={`${animal.gestationPeriod} Tage`}
+          />
+        </ul>
+      </div>
+
+      <h2>Beschreibung</h2>
+      <p
+        className="max-w-[80ch]"
+        dangerouslySetInnerHTML={{ __html: formattedDescription }}
+      />
+
+      <h2>Tiere in unserem Zoo</h2>
+      <ul>
+        {animal.animals.map((animal: any) => (
+          <li key={animal.id}>
+            <p>{animal.name}</p>
+            <TokenAvailability tokenId={animal.id} refreshKey={refreshKey} />
+            <AdoptButton tokenId={animal.id} onAdopted={triggerRefresh} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}

@@ -7,7 +7,7 @@ import { publicClient } from "../../../lib/wagmi";
 import { Button } from "@/components/ui/button";
 import { Hourglass, PawPrint } from "lucide-react";
 
-export default function AdoptButton({ tokenId }: { tokenId: number }) {
+export default function AdoptButton({ tokenId, onAdopted }: { tokenId: number, onAdopted: () => void }) {
   const { address: account, isConnected } = useAccount();
   const [txHash, setTxHash] = useState<string | null>(null);
   const [isWaiting, setIsWaiting] = useState(false);
@@ -47,6 +47,7 @@ export default function AdoptButton({ tokenId }: { tokenId: number }) {
           setTimeout(() => {
             refetchBalance(); // aktualisiert Besitz
             setIsWaiting(false);
+            onAdopted();
           }, 3000);
         },
       }
