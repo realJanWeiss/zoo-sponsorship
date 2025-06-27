@@ -60,3 +60,5 @@ Browser extension used to manage wallets and sign transactions
 
 **GitHub**\
 Repository for version control and collaboration
+
+by Sebastian Zettl, Vilmos Nagy, Jan Weiss
