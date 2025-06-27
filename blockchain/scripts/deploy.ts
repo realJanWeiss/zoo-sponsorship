@@ -23,7 +23,7 @@ async function main() {
   const receipt = await publicClient.waitForTransactionReceipt({ hash });
 
   const contractAddress = receipt.contractAddress as `0x${string}`;
-  console.log("✅ Contract deployed to:", contractAddress);
+  console.log("Contract deployed to:", contractAddress);
 
   // Speicherort für das Frontend
   const outputDir = path.join(__dirname, "..", "..", "lib");
@@ -39,10 +39,10 @@ async function main() {
   };
 
   fs.writeFileSync(outputPath, JSON.stringify(output, null, 2));
-  console.log(`📦 Contract data saved to: ${outputPath}`);
+  console.log(`Contract data saved to: ${outputPath}`);
 }
 
 main().catch((error) => {
-  console.error("❌ Deployment failed:", error);
+  console.error("Deployment failed:", error);
   process.exitCode = 1;
 });

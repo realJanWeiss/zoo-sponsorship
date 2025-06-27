@@ -12,7 +12,6 @@ export default function TokenAvailability({ tokenId, refreshKey }: { tokenId: nu
     functionName: "zooOwner",
   });
 
-  // 2. Lese Balance des zooOwner für diesen Token
   const { data: tokenCount, isLoading: loadingCount, refetch } = useReadContract({
     address: CONTRACT_ADDRESS,
     abi: CONTRACT_ABI,

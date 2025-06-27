@@ -29,14 +29,17 @@ contract AnimalSponsorship is ERC1155, AccessControl, ERC1155Burnable {
         _tokenURIs[4] = "https://white-famous-butterfly-266.mypinata.cloud/ipfs/bafybeic34h4l4txfmpfondtsp63aztp65dfsuu6wkrnyn5psaxbx5mvkcu/Iqhwa.json";
         _tokenURIs[5] = "https://white-famous-butterfly-266.mypinata.cloud/ipfs/bafybeic34h4l4txfmpfondtsp63aztp65dfsuu6wkrnyn5psaxbx5mvkcu/Abu.json";
 
+        // Kängurus
         _tokenURIs[6] = "https://white-famous-butterfly-266.mypinata.cloud/ipfs/bafybeic34h4l4txfmpfondtsp63aztp65dfsuu6wkrnyn5psaxbx5mvkcu/Kira.json";
         _tokenURIs[7] = "https://white-famous-butterfly-266.mypinata.cloud/ipfs/bafybeic34h4l4txfmpfondtsp63aztp65dfsuu6wkrnyn5psaxbx5mvkcu/Luma.json";
         _tokenURIs[8] = "https://white-famous-butterfly-266.mypinata.cloud/ipfs/bafybeic34h4l4txfmpfondtsp63aztp65dfsuu6wkrnyn5psaxbx5mvkcu/Taru.json";
 
+        // Eisbären
         _tokenURIs[9] = "https://white-famous-butterfly-266.mypinata.cloud/ipfs/bafybeic34h4l4txfmpfondtsp63aztp65dfsuu6wkrnyn5psaxbx5mvkcu/Nanuk.json";
         _tokenURIs[10] = "https://white-famous-butterfly-266.mypinata.cloud/ipfs/bafybeic34h4l4txfmpfondtsp63aztp65dfsuu6wkrnyn5psaxbx5mvkcu/Svala.json";
         _tokenURIs[11] = "https://white-famous-butterfly-266.mypinata.cloud/ipfs/bafybeic34h4l4txfmpfondtsp63aztp65dfsuu6wkrnyn5psaxbx5mvkcu/Borek.json";
         
+        // Flusspferde
         _tokenURIs[12] = "https://white-famous-butterfly-266.mypinata.cloud/ipfs/bafybeic34h4l4txfmpfondtsp63aztp65dfsuu6wkrnyn5psaxbx5mvkcu/Amara.json";
         _tokenURIs[13] = "https://white-famous-butterfly-266.mypinata.cloud/ipfs/bafybeic34h4l4txfmpfondtsp63aztp65dfsuu6wkrnyn5psaxbx5mvkcu/Tambo.json";
     }
