@@ -3,11 +3,14 @@
 import { useAccount, useReadContract, useWriteContract } from "wagmi";
 import { CONTRACT_ADDRESS, CONTRACT_ABI } from "../../../lib/constants";
 import { useState } from "react";
-import { publicClient, wagmiConfig } from "../../../lib/wagmi";
+import { publicClient } from "../../../lib/wagmi";
+import { Button } from "@/components/ui/button";
+import { Hourglass, PawPrint } from "lucide-react";
 
 export default function AdoptButton({ tokenId }: { tokenId: number }) {
   const { address: account, isConnected } = useAccount();
   const [txHash, setTxHash] = useState<string | null>(null);
+  const [isWaiting, setIsWaiting] = useState(false);
 
   // Besitzabfrage + refetch
   const {
@@ -36,11 +39,14 @@ export default function AdoptButton({ tokenId }: { tokenId: number }) {
       {
         onSuccess: async (txHash) => {
           setTxHash(txHash);
-          // warte auf Blockbestätigung (optional)
+          setIsWaiting(true);
+
           const receipt = await publicClient.waitForTransactionReceipt({ hash: txHash });
           console.log("Status:", receipt.status); // 1 = success, 0 = failure
+
           setTimeout(() => {
             refetchBalance(); // aktualisiert Besitz
+            setIsWaiting(false);
           }, 3000);
         },
       }
@@ -55,21 +61,22 @@ export default function AdoptButton({ tokenId }: { tokenId: number }) {
 
   return (
     <div className="my-4">
-      <button
-        disabled={isPending}
+
+      <Button
         onClick={handleAdopt}
-        className="bg-green-600 text-white px-4 py-2 rounded disabled:opacity-50"
+        disabled={isPending || isWaiting}
       >
-        {isPending ? "⏳ Adoption läuft …" : "🐾 Jetzt adoptieren"}
-      </button>
+        {isPending || isWaiting ? <Hourglass /> : <PawPrint />}
+        {isPending || isWaiting ? "Adoption läuft …" : "Jetzt adoptieren"}
+      </Button>
 
       {txHash && (
         <p className="mt-2 text-sm">
-          ✅ Adoption gesendet: <span className="font-mono">{txHash.slice(0, 10)}…</span>
+          Adoption gesendet: <span className="font-mono">{txHash.slice(0, 10)}…</span>
         </p>
       )}
 
-      {error && <p className="text-red-600 mt-2">❌ Fehler: {error.message}</p>}
+      {/* {error && <p className="text-red-600 mt-2">❌ Fehler: {error.message}</p>} */}
     </div>
   );
 }
