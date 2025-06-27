@@ -24,24 +24,6 @@ export default function AdoptButton({ tokenId }: { tokenId: number }) {
 
   const { writeContract, isPending, error } = useWriteContract();
 
-//   const handleAdopt = async () => {
-//     try {
-//         const hash = await writeContract({
-//             address: CONTRACT_ADDRESS,
-//             abi: CONTRACT_ABI,
-//             functionName: "adopt",
-//             args: [tokenId],
-//         });
-
-//         console.log("Adoption Hash:", hash);
-
-//         const receipt = await publicClient.waitForTransactionReceipt({ hash: hash });
-//         console.log("Adoption Receipt:", receipt);
-//     } catch (err) {
-//         console.error("Fehler bei Adoption:", err);
-//     }
-//     };
-
   const handleAdopt = () => {
     writeContract(
       {
