@@ -6,8 +6,9 @@ import TokenAvailability from "../components/TokenAvailabilty";
 import AdoptButton from "../components/AdoptButton";
 import Image from "next/image";
 import InformationRow from "./InformationRow";
+import { Animal } from "@/types";
 
-export default function ClientAnimalPage({ animal }: { animal: any }) {
+export default function ClientAnimalPage({ animal }: { animal: Animal }) {
   const formattedDescription = animal.description.replaceAll("\n", "<br>");
   const [refreshKey, setRefreshKey] = useState(0);
 
@@ -52,21 +53,21 @@ export default function ClientAnimalPage({ animal }: { animal: any }) {
       />
 
       <h2>Tiere in unserem Zoo</h2>
-      
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {animal.animals.map((animal: any) => (
-            <div
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {animal.animals.map((animal) => (
+          <div
             key={animal.id}
             className="rounded-2xl border border-gray-200 shadow-sm p-4 flex flex-col gap-2 bg-white"
-            >
+          >
             <p className="text-lg font-medium">{animal.name}</p>
 
             <TokenAvailability tokenId={animal.id} refreshKey={refreshKey} />
 
             <AdoptButton tokenId={animal.id} onAdopted={triggerRefresh} />
-            </div>
+          </div>
         ))}
-        </div>
+      </div>
     </div>
   );
 }
