@@ -12,3 +12,9 @@ export const wagmiConfig = createConfig({
     [localhost.id]: http("http://127.0.0.1:8545"), // z. B. http("http://127.0.0.1:8545")
   },
 });
+
+export const publicClient = createPublicClient({
+  chain: localhost,
+  transport: http("http://127.0.0.1:8545"), // oder z. B. http("https://sepolia.infura.io/v3/...")
+});
+

@@ -1,7 +1,7 @@
 "use client";
 
 import { useAccount, useReadContract } from "wagmi";
-import { CONTRACT_ABI, CONTRACT_ADDRESS } from "../../../lib/animalSponsorship";
+import { CONTRACT_ABI, CONTRACT_ADDRESS } from "../../../lib/constants";
 
 export default function TokenStatus() {
   const { address, isConnected } = useAccount();

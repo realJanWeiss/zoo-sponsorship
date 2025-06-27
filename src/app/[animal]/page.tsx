@@ -1,4 +1,7 @@
 import { fetchAnimal } from "@/api/api";
+import WalletConnect from "../components/WalletConnect";
+import TokenAvailability from "../components/TokenAvailabilty";
+import AdoptButton from "../components/AdoptButton";
 
 export default async function AnimalPage({
   params,
@@ -12,9 +15,13 @@ export default async function AnimalPage({
 
   return (
     <div className="page-container">
+      {/* <div><WalletConnect /></div> */}
+
       <h1>{animal.name}</h1>
       <div className="italic">{animal.latinName}</div>
       <p dangerouslySetInnerHTML={{ __html: formattedDescription }} />
+      <TokenAvailability tokenId={2} />
+      <AdoptButton tokenId={2} />
     </div>
   );
 }

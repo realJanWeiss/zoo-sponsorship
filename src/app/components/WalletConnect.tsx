@@ -11,7 +11,7 @@ export default function WalletConnect() {
   if (isConnected) {
     return (
       <div className="page-container">
-        ✅ Verbunden mit: {address.slice(0, 6)}...{address.slice(-4)}{" "}
+        ✅ Verbunden mit: {address?.slice(0, 6)}...{address?.slice(-4)}{" "}
         <button onClick={() => disconnect()}>Trennen</button>
       </div>
     );

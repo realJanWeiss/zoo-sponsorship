@@ -1,4 +1,6 @@
 import { viem, artifacts } from "hardhat";
+import * as fs from "fs";
+import * as path from "path";
 
 async function main() {
   const [walletClient] = await viem.getWalletClients();
@@ -15,12 +17,29 @@ async function main() {
   const hash = await walletClient.deployContract({
     abi: artifact.abi,
     bytecode: artifact.bytecode as `0x${string}`,
-    args: [],
+    args: [], // ggf. Argumente ergänzen
   });
 
   const receipt = await publicClient.waitForTransactionReceipt({ hash });
 
-  console.log("✅ Contract deployed to:", receipt.contractAddress);
+  const contractAddress = receipt.contractAddress as `0x${string}`;
+  console.log("✅ Contract deployed to:", contractAddress);
+
+  // Speicherort für das Frontend
+  const outputDir = path.join(__dirname, "..", "..", "lib");
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+  }
+
+  // Daten speichern
+  const outputPath = path.join(outputDir, "AnimalSponsorship.json");
+  const output = {
+    address: contractAddress,
+    abi: artifact.abi,
+  };
+
+  fs.writeFileSync(outputPath, JSON.stringify(output, null, 2));
+  console.log(`📦 Contract data saved to: ${outputPath}`);
 }
 
 main().catch((error) => {
