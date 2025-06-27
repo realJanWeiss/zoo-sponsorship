@@ -13,7 +13,7 @@ export default async function AnimalPage({
   const formattedDescription = animal.description.replaceAll("\n", "<br>");
 
   return (
-    <div className="page-container">
+    <div className="page-container pt-8">
       <h1>{animal.name}</h1>
       <div className="italic">{animal.latinName}</div>
       <p dangerouslySetInnerHTML={{ __html: formattedDescription }} />
