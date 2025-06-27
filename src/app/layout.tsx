@@ -4,7 +4,7 @@ import "./globals.css";
 import Image from "next/image";
 import Link from "next/link";
 import { Providers } from "./providers";
-import WalletConnect from "./components/WalletConnect";
+import HeaderActions from "./components/HeaderActions";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,7 +46,7 @@ export default function RootLayout({
               />
               <div className="text-sm text-gray-900 -mt-2">Happy Paws Zoo</div>
             </Link>
-            <WalletConnect />
+            <HeaderActions />
           </header>
           {children}
         </Providers>
