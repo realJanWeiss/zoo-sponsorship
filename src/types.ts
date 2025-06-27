@@ -3,6 +3,11 @@ interface Range {
   max: number;
 }
 
+interface SpecificAnimal {
+  name: string;
+  id: number;
+}
+
 export interface Animal {
   slug: string;
   name: string;
@@ -12,4 +17,5 @@ export interface Animal {
   lifeExpectancy: number;
   gestationPeriod: number;
   description: string;
+  animals: SpecificAnimal[]
 }

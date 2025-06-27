@@ -17,8 +17,16 @@ export default async function AnimalPage({
       <h1>{animal.name}</h1>
       <div className="italic">{animal.latinName}</div>
       <p dangerouslySetInnerHTML={{ __html: formattedDescription }} />
-      <TokenAvailability tokenId={1} />
-      <AdoptButton tokenId={1} />
+
+      {animal.animals.map((animal) => (
+                <li key={animal.id}>
+                  <p>{ animal.name }</p>
+                  
+
+                    <TokenAvailability tokenId={animal.id} />
+                    <AdoptButton tokenId={animal.id} />
+                </li>
+              ))}
     </div>
   );
 }
