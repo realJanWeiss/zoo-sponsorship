@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+![Logo](./public/logo.svg)
 
-## Getting Started
+# Happy Paws Zoo
 
-First, run the development server:
+This project involved developing a web application through which users can symbolically adopt
+various zoo animals. Each adoption is represented by an NFT (Non-Fungible Token) on the
+Ethereum test blockchain. The smart contracts are based on the ERC1155 standard, allowing
+for the efficient management of multiple token types within a single contract.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The NFTs carry not only symbolic value for the sponsors but also act as tamper-proof digital
+certificates permanently stored on the blockchain. This allows proof of support for a specific
+animal to remain transparent, verifiable, and publicly accessible—making the user’s
+contribution particularly meaningful.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+In addition to this emotional and symbolic value, the NFTs also have potential real-world
+applications: for example, they could be used as digital entry tickets to the zoo in the future.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The solution is entirely based on decentralized infrastructure, which ensures security,
+transparency, and longevity—without relying on centralized servers or databases.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technical background
 
-## Learn More
+- The tokens follow the ERC-1155 standard, allowing multiple unique token types to be
+managed in one contract.
+- Each animal has an individual metadata file (name, description, image, attributes)
+stored on IPFS (InterPlanetary File System).
+- When a user "adopts" an animal, the token is transferred from the zoo wallet to the
+user's wallet. A return function is also available.
+- The web application connects to the smart contract via a wallet (e.g., MetaMask) and
+enables direct, user-friendly interaction.
 
-To learn more about Next.js, take a look at the following resources:
+## Project goal
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The project demonstrates how blockchain technology and NFTs can be used for meaningful
+and creative applications — such as digital animal sponsorships as a modern extension of
+traditional donation models.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Used tools
 
-## Deploy on Vercel
+**OpenZeppelin ERC1155**\
+Standardized and audited smart contract template for managing multiple NFTs in one contract
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Remix IDE**\
+Web-based development environment for writing, compiling, and deploying smart contracts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**React.js**\
+JavaScript framework used for building the frontend of the web application
+
+**Wagmi**\
+React Hooks library for connecting to Ethereum wallets (e.g., MetaMask), used for wallet integration and smart contract interaction
+
+**Hardhat**\
+Local development environment for simulating, testing, and deploying smart contracts
+
+**Pinata**\
+IPFS service used to store metadata and images for the animal NFTs
+
+**MetaMask Wallet**\
+Browser extension used to manage wallets and sign transactions
+
+**GitHub**\
+Repository for version control and collaboration
