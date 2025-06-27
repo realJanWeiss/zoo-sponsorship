@@ -8,6 +8,12 @@ interface SpecificAnimal {
   id: number;
 }
 
+interface ImageAsset {
+  src: string;
+  width: number;
+  height: number;
+}
+
 export interface Animal {
   slug: string;
   name: string;
@@ -16,6 +22,7 @@ export interface Animal {
   weight: number | Range;
   lifeExpectancy: number;
   gestationPeriod: number;
+  image: ImageAsset;
   description: string;
-  animals: SpecificAnimal[]
+  animals: SpecificAnimal[];
 }

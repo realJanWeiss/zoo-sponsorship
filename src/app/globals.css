@@ -44,7 +44,7 @@
 }
 
 h1 {
-  @apply text-6xl font-bold mb-8;
+  @apply text-6xl font-bold;
 }
 
 .page-container {

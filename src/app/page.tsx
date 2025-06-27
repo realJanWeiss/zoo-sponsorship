@@ -14,7 +14,7 @@ export default async function Home() {
           <li key={animal.slug}>
             <Link className="block" href={`/${animal.slug}`}>
               <Image
-                src={`/${animal.slug}-thumbnail.jpg`}
+                src={`/animal-images/thumbnails/${animal.slug}-thumbnail.jpg`}
                 height={206}
                 width={310}
                 alt=""
