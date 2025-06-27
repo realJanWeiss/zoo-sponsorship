@@ -4,6 +4,7 @@ import "./globals.css";
 import Image from "next/image";
 import Link from "next/link";
 import { Providers } from "./providers";
+import WalletConnect from "./components/WalletConnect";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,17 +31,24 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="page-container">
-          <Link className="inline-block" href="/" aria-label="Tiergarten Home">
-            <Image
-              src="/logo.svg"
-              alt="Tiergarten Logo"
-              width={102}
-              height={131}
-            />
-          </Link>
-        </header>
-        <Providers>{children}</Providers>
+        <Providers>
+          <header className="page-container flex items-center justify-between">
+            <Link
+              className="inline-block"
+              href="/"
+              aria-label="Tiergarten Home"
+            >
+              <Image
+                src="/logo.svg"
+                alt="Tiergarten Logo"
+                width={102}
+                height={131}
+              />
+            </Link>
+            <WalletConnect />
+          </header>
+          {children}
+        </Providers>
       </body>
     </html>
   );

@@ -1,27 +1,40 @@
 "use client";
 
+import { LogIn, UserRoundCheck } from "lucide-react";
 import { useConnect, useDisconnect, useAccount } from "wagmi";
 import { injected } from "wagmi/connectors";
+import { Button } from "@/components/ui/button";
 
 export default function WalletConnect() {
   const { connect } = useConnect();
   const { disconnect } = useDisconnect();
-  const { address, isConnected } = useAccount();
+  const { isConnected } = useAccount();
+
+  const triggerConnect = () => {
+    connect({ connector: injected() });
+  };
+
+  const triggerDisconnect = () => {
+    disconnect();
+  };
 
   if (isConnected) {
     return (
-      <div className="page-container">
-        ✅ Verbunden mit: {address?.slice(0, 6)}...{address?.slice(-4)}{" "}
-        <button onClick={() => disconnect()}>Trennen</button>
-      </div>
+      <Button
+        onClick={triggerDisconnect}
+        size="icon"
+        variant="ghost"
+        className="size-10"
+      >
+        <UserRoundCheck className="size-8" />
+      </Button>
     );
   }
 
   return (
-    <div className="page-container">
-      <button onClick={() => connect({ connector: injected() })}>
-        🔌 Mit MetaMask verbinden
-      </button>
-    </div>
+    <Button onClick={triggerConnect}>
+      <LogIn />
+      Login
+    </Button>
   );
 }
