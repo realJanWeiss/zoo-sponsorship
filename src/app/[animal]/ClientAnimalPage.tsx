@@ -52,15 +52,21 @@ export default function ClientAnimalPage({ animal }: { animal: any }) {
       />
 
       <h2>Tiere in unserem Zoo</h2>
-      <ul>
+      
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {animal.animals.map((animal: any) => (
-          <li key={animal.id}>
-            <p>{animal.name}</p>
+            <div
+            key={animal.id}
+            className="rounded-2xl border border-gray-200 shadow-sm p-4 flex flex-col gap-2 bg-white"
+            >
+            <p className="text-lg font-medium">{animal.name}</p>
+
             <TokenAvailability tokenId={animal.id} refreshKey={refreshKey} />
+
             <AdoptButton tokenId={animal.id} onAdopted={triggerRefresh} />
-          </li>
+            </div>
         ))}
-      </ul>
+        </div>
     </div>
   );
 }

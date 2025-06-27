@@ -30,8 +30,8 @@ export default function TokenAvailability({ tokenId, refreshKey }: { tokenId: nu
   if (loadingOwner || loadingCount) return <p>⏳ Lade ...</p>;
 
   return (
-    <p>
-      Noch verfügbar: {tokenCount?.toString() ?? "0"} Patenschaften
-    </p>
+    <span className="text-sm text-gray-600">
+      Noch <strong className="text-black">{tokenCount?.toString() ?? "0"}</strong> Patenschaften verfügbar
+    </span>
   );
 }

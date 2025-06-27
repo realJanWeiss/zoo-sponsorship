@@ -5,7 +5,7 @@ import { CONTRACT_ADDRESS, CONTRACT_ABI } from "../../../lib/constants";
 import { useState } from "react";
 import { publicClient } from "../../../lib/wagmi";
 import { Button } from "@/components/ui/button";
-import { Hourglass, PawPrint } from "lucide-react";
+import { CheckCircle, Hourglass, PawPrint } from "lucide-react";
 
 export default function AdoptButton({ tokenId, onAdopted }: { tokenId: number, onAdopted: () => void }) {
   const { address: account, isConnected } = useAccount();
@@ -58,7 +58,14 @@ export default function AdoptButton({ tokenId, onAdopted }: { tokenId: number, o
 
   if (!isConnected) return <p>⛔ Bitte verbinde deine Wallet.</p>;
   if (loadingBalance) return <p>⏳ Prüfe Besitz …</p>;
-  if (alreadyAdopted) return <p>✅ Du hast dieses Tier bereits adoptiert.</p>;
+  if (alreadyAdopted) {
+    return (
+      <div className="flex items-center gap-2 text-green-700 text-sm bg-green-100 rounded-md px-3 py-2">
+        <CheckCircle className="w-4 h-4" />
+        <span>Du hast dieses Tier bereits adoptiert.</span>
+      </div>
+    );
+  }
 
   return (
     <div className="my-4">
